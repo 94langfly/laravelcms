@@ -11,4 +11,9 @@ class CustomPage extends Model
     protected $dates = ['created_at', 'updated_at'];
     protected $table = "custom_pages";
     protected $guarded = ["id"];
+    
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'creator_id', 'id');
+    }
 }

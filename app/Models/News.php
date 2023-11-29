@@ -21,4 +21,9 @@ class News extends Model
     {
         return $this->hasMany(NewsComment::class);
     }
+    
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'creator_id', 'id');
+    }
 }
